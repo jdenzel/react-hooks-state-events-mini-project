@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Task() {
+function Task({ text, category, handleRemove, index}) {
+
+
+  // if(remove)  {
+  //   return null;
+  // }
   return (
     <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+      <div className="label">{category}</div>
+      <div className="text">{text}</div>
+      <button className="delete" data-index={index} onClick={handleRemove}>X</button>
     </div>
   );
 }
